@@ -17,12 +17,15 @@
 package com.google.android.gms.samples.vision.barcodereader;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.vision.barcode.Barcode;
@@ -49,7 +52,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_main);
 
         statusMessage = (TextView)findViewById(R.id.status_message);
-        barcodeValue = (TextView)findViewById(R.id.barcode_value);
+        barcodeValue = (TextView)findViewById(R.id.barcodeValue);
 
         autoFocus = (CompoundButton) findViewById(R.id.auto_focus);
         useFlash = (CompoundButton) findViewById(R.id.use_flash);
@@ -118,6 +121,22 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         else {
             super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    public void BarcodeOutputClicked(View view) {
+        String url = barcodeValue.getText().toString();
+        if(Patterns.WEB_URL.matcher(url).matches()==false)  //Checks if url scanned is valid or not
+        {
+            Toast.makeText(this,barcodeValue.getText(),Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            if (!url.startsWith("http://") && !url.startsWith("https://"))  //url must start with http:// to open it with browser
+                url = "http://" + url;
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));  //Launch browser with scanned url
+            startActivity(browserIntent);
+            finish();  //kill this activity after opening browser
         }
     }
 }
