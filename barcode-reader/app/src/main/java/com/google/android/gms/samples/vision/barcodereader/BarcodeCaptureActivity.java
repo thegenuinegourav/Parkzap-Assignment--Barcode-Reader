@@ -91,7 +91,14 @@ public final class BarcodeCaptureActivity extends AppCompatActivity {
         super.onCreate(icicle);
         setContentView(R.layout.barcode_capture);
 
-        
+        imageToBeDownloaded = (ImageView)findViewById(R.id.image);
+
+        Picasso.with(this)
+                .load("https://avatars3.githubusercontent.com/u/13916687?v=3&s=200")
+                .placeholder(R.drawable.no_internet_connection) 
+                .error(R.drawable.no_internet_connection)
+                .into(imageToBeDownloaded);
+
         mPreview = (CameraSourcePreview) findViewById(R.id.preview);
         mGraphicOverlay = (GraphicOverlay<BarcodeGraphic>) findViewById(R.id.graphicOverlay);
 
