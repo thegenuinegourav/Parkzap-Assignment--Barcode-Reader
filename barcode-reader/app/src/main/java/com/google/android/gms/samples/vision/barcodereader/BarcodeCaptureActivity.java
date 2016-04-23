@@ -95,7 +95,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity {
 
         Picasso.with(this)
                 .load("https://avatars3.githubusercontent.com/u/13916687?v=3&s=200")
-                .placeholder(R.drawable.no_internet_connection) 
+                .placeholder(R.drawable.no_internet_connection)
                 .error(R.drawable.no_internet_connection)
                 .into(imageToBeDownloaded);
 
