@@ -154,7 +154,7 @@ MERGED from [com.android.support:support-v4:23.0.1] D:\GouravPrograms\GitProject
 MERGED from [com.android.support:appcompat-v7:23.0.1] D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.0.1] D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:17:9-40
+		ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:17:9-43
 	android:supportsRtl
 		ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:18:9-37
 	android:hardwareAccelerated
@@ -164,7 +164,7 @@ MERGED from [com.android.support:support-v4:23.0.1] D:\GouravPrograms\GitProject
 	android:allowBackup
 		ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:13:9-35
 	android:icon
-		ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:16:9-38
+		ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:16:9-41
 	android:theme
 		ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:19:9-47
 meta-data#com.google.android.gms.version

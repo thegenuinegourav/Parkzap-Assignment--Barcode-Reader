@@ -33,8 +33,8 @@
         android:allowBackup="true"
         android:fullBackupContent="false"
         android:hardwareAccelerated="true"
-        android:icon="@drawable/icon"
-        android:label="MultiTrackerApp"
+        android:icon="@drawable/parkzap"
+        android:label="Parkzap Assignment"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat" >
         <meta-data

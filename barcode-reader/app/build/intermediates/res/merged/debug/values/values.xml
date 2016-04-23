@@ -335,6 +335,9 @@
     <!-- From: file:/D:/GouravPrograms/GitProjects/ParkzapAssignment/barcode-reader/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.1.0/res/values/admob_strings.xml -->
     <eat-comment/>
     <string name="accept">Accept</string>
+    <!-- From: file:/D:/GouravPrograms/GitProjects/ParkzapAssignment/barcode-reader/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">Parkzap Assignment</string>
     <!-- From: file:/D:/GouravPrograms/GitProjects/ParkzapAssignment/barcode-reader/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/res/values/values.xml -->
     <eat-comment/>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>

@@ -35,5 +35,23 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/auto_focus"
+        android:id="@+id/auto_focus"
+        android:layout_above="@+id/read_barcode"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="77dp"
+        android:checked="false" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/use_flash"
+        android:id="@+id/use_flash"
+        android:layout_alignTop="@+id/auto_focus"
+        android:layout_alignEnd="@+id/barcode_value"
+        android:checked="false" />
 </RelativeLayout>
 <!-- From: file:/D:/GouravPrograms/GitProjects/ParkzapAssignment/barcode-reader/app/src/main/res/layout-land-v17/activity_main.xml -->
