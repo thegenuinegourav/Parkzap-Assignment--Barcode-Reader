@@ -4,15 +4,28 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#27AE60"
     android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:background="#414444">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#27AE60"
+            android:layout_gravity="center_horizontal"
+            android:text="Download Image using PICASSO"
+            android:layout_marginTop="10dp"
+            android:textSize="17sp"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_margin="10dp"
             android:id="@+id/image"/>
     </LinearLayout>
 
@@ -21,16 +34,20 @@
     android:id="@+id/topLayout"
     android:orientation="horizontal"
     android:layout_width="0dp"
+    android:background="#414444"
+    android:layout_margin="5dp"
     android:layout_height="match_parent"
     android:keepScreenOn="true">
 
   <com.google.android.gms.samples.vision.barcodereader.ui.camera.CameraSourcePreview
       android:id="@+id/preview"
+      android:layout_margin="10dp"
       android:layout_width="match_parent"
       android:layout_height="match_parent">
 
     <com.google.android.gms.samples.vision.barcodereader.ui.camera.GraphicOverlay
         android:id="@+id/graphicOverlay"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
