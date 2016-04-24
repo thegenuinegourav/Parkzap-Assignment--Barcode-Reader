@@ -29,8 +29,7 @@ import com.google.android.gms.samples.vision.barcodereader.ui.camera.GraphicOver
 import com.google.android.gms.vision.barcode.Barcode;
 
 /**
- * Graphic instance for rendering barcode position, size, and ID within an associated graphic
- * overlay view.
+ * Graphic instance for displaying barcode position, size, and ID
  */
 public class BarcodeGraphic extends GraphicOverlay.Graphic {
 
@@ -106,6 +105,8 @@ public class BarcodeGraphic extends GraphicOverlay.Graphic {
 
         // Draws a label at the bottom of the barcode indicate the barcode value that was detected.
         canvas.drawText(barcode.rawValue, rect.left, rect.bottom, mTextPaint);
+
+
 
 
     }

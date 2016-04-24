@@ -16,7 +16,7 @@ ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\sr
 	android:installLocation
 		ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:4:5-35
 uses-permission#android.permission.INTERNET
-ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:6:5-67
+ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:7:5-67
 MERGED from [com.google.android.gms:play-services-ads:8.1.0] D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\AndroidManifest.xml:20:5-66
 MERGED from [com.google.android.gms:play-services-analytics:8.1.0] D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\8.1.0\AndroidManifest.xml:21:5-67
 MERGED from [com.google.android.gms:play-services-ads:8.1.0] D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\8.1.0\AndroidManifest.xml:20:5-66
@@ -31,11 +31,11 @@ MERGED from [com.google.android.gms:play-services-ads:8.1.0] D:\GouravPrograms\G
 MERGED from [com.google.android.gms:play-services-wallet:8.1.0] D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\8.1.0\AndroidManifest.xml:20:5-66
 MERGED from [com.google.android.gms:play-services-maps:8.1.0] D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\8.1.0\AndroidManifest.xml:21:5-66
 	android:name
-		ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:6:22-64
+		ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:7:22-64
 uses-feature#android.hardware.camera
-ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:8:5-60
+ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:9:5-60
 	android:name
-		ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:8:19-57
+		ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:9:19-57
 uses-permission#android.permission.CAMERA
 ADDED from D:\GouravPrograms\GitProjects\ParkzapAssignment\barcode-reader\app\src\main\AndroidManifest.xml:10:5-65
 	android:name

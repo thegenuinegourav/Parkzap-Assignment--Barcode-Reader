@@ -55,8 +55,8 @@ import com.squareup.picasso.Picasso;
 import java.io.IOException;
 
 /**
- * Activity for the multi-tracker app.  This app detects barcodes and displays the value with the
- * rear facing camera. During detection overlay graphics are drawn to indicate the position,
+ * This activity detects barcodes and displays the value with the
+ * rear facing camera. Overlay graphics are drawn to indicate the position,
  * size, and ID of each barcode.
  */
 public final class BarcodeCaptureActivity extends AppCompatActivity {
@@ -78,8 +78,6 @@ public final class BarcodeCaptureActivity extends AppCompatActivity {
     private CameraSource mCameraSource;
     private CameraSourcePreview mPreview;
     private GraphicOverlay<BarcodeGraphic> mGraphicOverlay;
-
-    // helper objects for detecting taps and pinches.
     private ScaleGestureDetector scaleGestureDetector;
     private GestureDetector gestureDetector;
 
@@ -91,14 +89,16 @@ public final class BarcodeCaptureActivity extends AppCompatActivity {
         super.onCreate(icicle);
         setContentView(R.layout.barcode_capture);
 
+        //Using Picasso to download and show the image on first half of screen
         imageToBeDownloaded = (ImageView)findViewById(R.id.image);
 
         Picasso.with(this)
-                .load("https://avatars3.githubusercontent.com/u/13916687?v=3&s=200")
-                .placeholder(R.drawable.no_internet_connection)
-                .error(R.drawable.no_internet_connection)
+                .load("https://avatars3.githubusercontent.com/u/13916687?v=3&s=200")  //url to Parkzap image
+                .placeholder(R.drawable.no_internet_connection)  //Initially before downloading, this image will be displayed
+                .error(R.drawable.no_internet_connection)  //When any internet error occurs, then this image will be displayed
                 .into(imageToBeDownloaded);
 
+        //For Second half of screen:
         mPreview = (CameraSourcePreview) findViewById(R.id.preview);
         mGraphicOverlay = (GraphicOverlay<BarcodeGraphic>) findViewById(R.id.graphicOverlay);
 
@@ -186,15 +186,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity {
                 new MultiProcessor.Builder<>(barcodeFactory).build());
 
         if (!barcodeDetector.isOperational()) {
-            // Note: The first time that an app using the barcode or face API is installed on a
-            // device, GMS will download a native libraries to the device in order to do detection.
-            // Usually this completes before the app is run for the first time.  But if that
-            // download has not yet completed, then the above call will not detect any barcodes
-            // and/or faces.
-            //
-            // isOperational() can be used to check if the required native libraries are currently
-            // available.  The detectors will automatically become operational once the library
-            // downloads complete on device.
+
             Log.w(TAG, "Detector dependencies are not yet available.");
 
             // Check for low storage.  If there is low storage, the native library will not be
@@ -259,22 +251,6 @@ public final class BarcodeCaptureActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Callback for the result from requesting permissions. This method
-     * is invoked for every call on {@link #requestPermissions(String[], int)}.
-     * <p>
-     * <strong>Note:</strong> It is possible that the permissions request interaction
-     * with the user is interrupted. In this case you will receive empty permissions
-     * and results arrays which should be treated as a cancellation.
-     * </p>
-     *
-     * @param requestCode  The request code passed in {@link #requestPermissions(String[], int)}.
-     * @param permissions  The requested permissions. Never null.
-     * @param grantResults The grant results for the corresponding permissions
-     *                     which is either {@link PackageManager#PERMISSION_GRANTED}
-     *                     or {@link PackageManager#PERMISSION_DENIED}. Never null.
-     * @see #requestPermissions(String[], int)
-     */
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            @NonNull String[] permissions,
@@ -311,9 +287,7 @@ public final class BarcodeCaptureActivity extends AppCompatActivity {
     }
 
     /**
-     * Starts or restarts the camera source, if it exists.  If the camera source doesn't exist yet
-     * (e.g., because onResume was called before the camera source was created), this will be called
-     * again when the camera source is created.
+     * Starts or restarts the camera source, if it exists.
      */
     private void startCameraSource() throws SecurityException {
         // check that the device has play services available.
@@ -346,7 +320,6 @@ public final class BarcodeCaptureActivity extends AppCompatActivity {
      */
     private boolean onTap(float rawX, float rawY) {
 
-        //TODO: use the tap position to select the barcode.
         BarcodeGraphic graphic = mGraphicOverlay.getFirstGraphic();
         Barcode barcode = null;
         if (graphic != null) {
@@ -378,52 +351,16 @@ public final class BarcodeCaptureActivity extends AppCompatActivity {
 
     private class ScaleListener implements ScaleGestureDetector.OnScaleGestureListener {
 
-        /**
-         * Responds to scaling events for a gesture in progress.
-         * Reported by pointer motion.
-         *
-         * @param detector The detector reporting the event - use this to
-         *                 retrieve extended info about event state.
-         * @return Whether or not the detector should consider this event
-         * as handled. If an event was not handled, the detector
-         * will continue to accumulate movement until an event is
-         * handled. This can be useful if an application, for example,
-         * only wants to update scaling factors if the change is
-         * greater than 0.01.
-         */
         @Override
         public boolean onScale(ScaleGestureDetector detector) {
             return false;
         }
 
-        /**
-         * Responds to the beginning of a scaling gesture. Reported by
-         * new pointers going down.
-         *
-         * @param detector The detector reporting the event - use this to
-         *                 retrieve extended info about event state.
-         * @return Whether or not the detector should continue recognizing
-         * this gesture. For example, if a gesture is beginning
-         * with a focal point outside of a region where it makes
-         * sense, onScaleBegin() may return false to ignore the
-         * rest of the gesture.
-         */
         @Override
         public boolean onScaleBegin(ScaleGestureDetector detector) {
             return true;
         }
 
-        /**
-         * Responds to the end of a scale gesture. Reported by existing
-         * pointers going up.
-         * <p/>
-         * Once a scale has ended, {@link ScaleGestureDetector#getFocusX()}
-         * and {@link ScaleGestureDetector#getFocusY()} will return focal point
-         * of the pointers remaining on the screen.
-         *
-         * @param detector The detector reporting the event - use this to
-         *                 retrieve extended info about event state.
-         */
         @Override
         public void onScaleEnd(ScaleGestureDetector detector) {
             mCameraSource.doZoom(detector.getScaleFactor());

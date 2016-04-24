@@ -32,7 +32,7 @@ import com.google.android.gms.vision.barcode.Barcode;
 
 /**
  * Main activity demonstrating how to pass extra parameters to an activity that
- * reads barcodes.
+ * reads barcodes i.e. AutoFocus and Flash light & displays the output of scanned barcode
  */
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -80,26 +80,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     /**
-     * Called when an activity you launched exits, giving you the requestCode
-     * you started it with, the resultCode it returned, and any additional
-     * data from it.  The <var>resultCode</var> will be
-     * {@link #RESULT_CANCELED} if the activity explicitly returned that,
-     * didn't return any result, or crashed during its operation.
-     * <p/>
-     * <p>You will receive this call immediately before onResume() when your
-     * activity is re-starting.
-     * <p/>
-     *
-     * @param requestCode The integer request code originally supplied to
-     *                    startActivityForResult(), allowing you to identify who this
-     *                    result came from.
-     * @param resultCode  The integer result code returned by the child activity
-     *                    through its setResult().
-     * @param data        An Intent, which can return result data to the caller
-     *                    (various data can be attached to Intent "extras").
-     * @see #startActivityForResult
-     * @see #createPendingResult
-     * @see #setResult(int)
+     * Called when an activity you launched exits i.e. when BarcodeCaptureActivity exits
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -124,6 +105,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
     }
 
+    //On clicking on scanned url
     public void BarcodeOutputClicked(View view) {
         String url = barcodeValue.getText().toString();
         if(Patterns.WEB_URL.matcher(url).matches()==false)  //Checks if url scanned is valid or not
